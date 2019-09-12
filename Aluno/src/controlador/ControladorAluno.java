@@ -8,6 +8,11 @@ import dao.AlunoDao;
 import javax.swing.JOptionPane;
 import modelo.Aluno;
 import tela.manutencao.ManutencaoAluno;
+import java.util.List;
+
+import java.util.Vector;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Administrador
@@ -51,5 +56,24 @@ public class ControladorAluno {
         } else {
             JOptionPane.showMessageDialog(null, "Erro!");
         }
+    }
+    
+    public static void atualizarTabela(JTable tabela) {
+        DefaultTableModel modelo = new DefaultTableModel();
+        //definindo o cabeçalho da tabela
+        modelo.addColumn("Codigo");
+        modelo.addColumn("Endereco");
+        modelo.addColumn("Nome");
+        List<Aluno> resultados = AlunoDao.consultar();
+        for (Aluno objeto : resultados) {
+            Vector linha = new Vector();
+            
+            //definindo o conteúdo da tabela
+            linha.add(objeto.getCodigo());
+            linha.add(objeto.getNome());
+            linha.add(objeto.getEndereco());
+            modelo.addRow(linha); //adicionando a linha na tabela
+        }
+        tabela.setModel(modelo);
     }
 }

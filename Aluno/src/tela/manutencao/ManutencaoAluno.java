@@ -48,10 +48,16 @@ public class ManutencaoAluno extends javax.swing.JDialog {
         jLabel2.setText("Código:");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setText("Nome:");
+        jLabel3.setText("Endereço:");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel4.setText("Endereço:");
+        jLabel4.setText("Nome:");
+
+        jtfNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtfNomeActionPerformed(evt);
+            }
+        });
 
         btnAdicionar.setText("Adiconar");
         btnAdicionar.addActionListener(new java.awt.event.ActionListener() {
@@ -150,6 +156,10 @@ controlador.ControladorAluno.alterar(this);        // TODO add your handling cod
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
 controlador.ControladorAluno.excluir(this);        // TODO add your handling code here:
     }//GEN-LAST:event_btnExcluirActionPerformed
+
+    private void jtfNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtfNomeActionPerformed
 
     /**
      * @param args the command line arguments
